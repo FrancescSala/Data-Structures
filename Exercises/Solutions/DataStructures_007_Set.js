@@ -1,6 +1,6 @@
 /*
 
-// Personally prefer this implementation, with an array
+// Personally I prefer this implementation, with an array
 // also because in the skeleton proposed by freecodecamp the constructor
 // does not have any parameter - empty constructor - , which does not 
 // match  the description of the exercise.
@@ -34,25 +34,20 @@ class Set {
 }
 
 const set1 = new Set([1, 2, 3, 5, 5, 2, 0]);
-console.log(set1);
-// output: {1, 2, 3, 5, 0}
-console.log(set1.has(1));
-// output: true
-console.log(set1.has(6));
-// output: false
+console.log(set1);              // expected output: {1, 2, 3, 5, 0}
+console.log(set1.has(1));       // expected output: true
+console.log(set1.has(6));       // expected output: false
 
-console.log(set1.add(5));
-// output false
-console.log(set1.add(-1));
-// output true
-console.log(set1.remove(2));
-// output true
-console.log(set1.remove(18));
-// output false
-console.log(set1.size());
+console.log(set1.add(5));       // expected output: false
+console.log(set1.add(-1));      // expected output: true
+console.log(set1.remove(2));    // expected output: true
+console.log(set1.remove(18));   // expected output: false
+console.log(set1.size());       // exoected output: 5
 
-console.log(set1);
+console.log(set1);              // expected output: { 1, 3, 5, 0, -1 }
+
 */
+
 
 class Set {
     constructor() {
@@ -94,7 +89,8 @@ class Set {
     // Only change code above this line
   }
 
-const set1 = new Set(); //[1, 2, 3, 5, 5, 2, 0]);
+  /*
+const set1 = new Set();
 set1.add(1);
 set1.add(2);
 set1.add(3);
@@ -109,4 +105,6 @@ console.log(set1.has(4)); // expected output false
 console.log(set1.remove(2)); // expected output true;
 console.log(set1.remove(4)); // expected output false;
 console.log(set1);
+
+*/
 

@@ -58,6 +58,7 @@ class Set {
 */
     intersection(anotherSet) {
       let s = new Set();
+      // this is to make the fewer iterations possible in the for below
       let a; let b;
       if (this.size() <= anotherSet.size()) {
         a = this; b = anotherSet;

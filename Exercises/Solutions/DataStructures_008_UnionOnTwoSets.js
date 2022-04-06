@@ -43,6 +43,14 @@ class Set {
       for (let v of b.values()) s.add(v);
       return s;
     }
+    // Note, wirtten like this because the description of the exercise says union should return a NEW set.
+    // That is, A.union(B) does not modify A, and does not modify B.
+    // An implementation modifying A would be:
+    //union(b) {
+    //  for (let v of b.values()) this.add(v);
+    //  return this;
+    //}
+    
     // Only change code above this line
   }
   
