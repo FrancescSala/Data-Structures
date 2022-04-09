@@ -1,56 +1,37 @@
-class Set {
-    constructor() {
-      // This will hold the set
-      this.dictionary = {};
-      this.length = 0;
-    }
-    // This method will check for the presence of an element and return true or false
-    has(element) {
-      return this.dictionary[element] !== undefined;
-    }
-    // This method will return all the values in the set
-    values() {
-      return Object.values(this.dictionary);
-    }
-    // This method will add an element to the set
-    add(element) {
-      if (!this.has(element)) {
-        this.dictionary[element] = element;
-        this.length++;
-        return true;
-      }
+var Map = function() {
+  this.collection = {};
+  // Only change code below this line
+  this.add = function(key,val) {
+    console.log(this.size());
+    this.collection[key] = val;
+  };
   
-      return false;
-    }
-    // This method will remove an element from a set
-    remove(element) {
-      if (this.has(element)) {
-        delete this.dictionary[element];
-        this.length--;
-        return true;
-      }
+  this.remove = function(key) {
+    delete this.collection[key];
+  };
   
-      return false;
-    }
-    // This method will return the size of the set
-    size() {
-      return this.length;
-    }
-    // Only change code below this line
-    union(b) {
-      let s = new Set();
-      for (let v of this.values()) s.add(v);
-      for (let v of b.values()) s.add(v);
-      return s;
-    }
-    // Note, wirtten like this because the description of the exercise says union should return a NEW set.
-    // That is, A.union(B) does not modify A, and does not modify B.
-    // An implementation modifying A would be:
-    //union(b) {
-    //  for (let v of b.values()) this.add(v);
-    //  return this;
-    //}
-    
-    // Only change code above this line
-  }
+  this.get = function(key) {
+    return this.collection[key];
+  };
   
+  this.has = function(key) {
+    return this.collection.hasOwnProperty(key);
+    // I rather do not like return this.collection[key] !== undefined
+    // because if we added .add(key,undefined), then .has() would INCORRETLY return false
+    // However, with the uncommented line this case is CORRECTLY managed
+  };
+  
+  this.values = function() {
+    return Object.values(this.collection);  
+  };
+  
+  this.clear = function() {
+    this.collection = {};
+  };
+  
+  this.size = function() {
+    return Object.keys(this.collection).length;
+  };
+  // Only change code above this line
+};
+
