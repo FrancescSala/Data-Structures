@@ -44,10 +44,15 @@ var Node = function(data, prev) {
       let aux;
       while (n !== null) {
         aux = n.next;
-        [n.prev,n.next] = [n.next,n.prev];
+//        [n.prev,n.next] = [n.next,n.prev];  slightly less sfficient
+        n.next = n.prev;
+        n.prev = aux;
         n = aux;
       }
-      [this.head, this.tail] = [this.tail, this.head];
+//      [this.head, this.tail] = [this.tail, this.head]; slightly less efficient
+      aux = this.head;
+      this.head = this.tail;
+      this.tail = aux;
     };  
   
     this.traverse = function() {
@@ -63,9 +68,20 @@ var Node = function(data, prev) {
   
   
   let dll = new DoublyLinkedList();
-  dll.add('Pepe');
+  dll.add('Pedro');
+  dll.add('Santiago');
   dll.add('Juan');
-  dll.add('Guillermo');
+  dll.add('Andrés');
+  dll.add('Bartolomé');
+  dll.add('Santiago');
+  dll.add('Judas');
+  dll.add('Judas');
+  dll.add('Mateo');
+  dll.add('Felipe');
+  dll.add('Simón');
+  dll.add('Tomás');
+  
   dll.traverse();
+  console.log('');
   dll.traverse(dll.reverse());
   
