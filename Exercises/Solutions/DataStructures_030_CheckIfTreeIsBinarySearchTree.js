@@ -10,15 +10,12 @@ function BinarySearchTree() {
 function isBinarySearchTree(tree) {
   // Only change code below this line
   function _isBinarySearchTree(node) {
-//    console.log(node);
-//    console.log(typeof(node));
     if (node === null) return true;
     if (node.left !== null && node.left.value >= node.value) return false;
     if (node.right !== null && node.right.value <= node.value) return false;
     return _isBinarySearchTree(node.left) && _isBinarySearchTree(node.right);
   };
   
-  if (tree.root === null) return true;
   return _isBinarySearchTree(tree.root);
    
   // Only change code above this line
