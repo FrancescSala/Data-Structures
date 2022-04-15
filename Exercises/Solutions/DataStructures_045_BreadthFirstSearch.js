@@ -42,5 +42,3 @@ function bfs(graph, root) {
   console.log(bfs(exBFSGraph, 0));
 
   
-
-  // should return {0: 1, 1: 0, 2: 1, 3: 2}
