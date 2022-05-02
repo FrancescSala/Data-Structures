@@ -90,14 +90,3 @@ class PriorityQueue {
 }
 */
 
-
-let pq = new PriorityQueue();
-pq.enqueue(['kitten',2]);
-pq.enqueue(['dog',2]);
-pq.enqueue(['rabbit',2]);
-pq.enqueue(['human',1]);
-console.log(pq.front());
-console.log(pq.dequeue());
-console.log(pq.dequeue());
-console.log(pq.dequeue());
-console.log(pq.dequeue());
