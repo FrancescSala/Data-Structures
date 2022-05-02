@@ -13,12 +13,9 @@ function PriorityQueue () {
           if (item.length !== 2) throw Error('Argument does not have expected format: length 2 expected');
           if (isNaN(item[1])) throw Error('Argument does not have expected format: priority should be a number');
           // let's look for the position item should have
-          let j;
-          for (let i = 0; i<this.size();i++)
-              if (this.collection[i][1] > item[1]) { j = i; break; }
+          let j = this.collection.findIndex(elem => elem[1] > item[1]); // index of the first element that has less priority than the item we are adding
           // item has to be inserted in position before j
-          if (j === undefined) this.collection.push(item);
-          else if (j === 0) this.collection.unshift(item);
+          if (j === -1) this.collection.push(item);
           else this.collection.splice(j,0,item);
       };
       
@@ -63,13 +60,11 @@ class PriorityQueue {
         if (item.length !== 2) throw Error('Argument does not have expected format: length 2 expected');
         if (isNaN(item[1])) throw Error('Argument does not have expected format: priority should be a number');
         // let's look for the position item should have
-        let j;
-        for (let i = 0; i<this.collection.length;i++)
-            if (this.collection[i][1] > item[1]) { j = i; break; }
+        let j = this.collection.findIndex(elem => elem[1] > item[1]); // index of the first element that has less priority than the item we are adding
         // item has to be inserted in position before j
-        if (j === undefined) this.collection.push(item);
+        if (j === -1) this.collection.push(item);
         else this.collection.splice(j,0,item);
-    }
+}
     
     dequeue() {
         if (this.isEmpty()) throw Error('Empty priority queue');
@@ -94,3 +89,15 @@ class PriorityQueue {
     }
 }
 */
+
+
+let pq = new PriorityQueue();
+pq.enqueue(['kitten',2]);
+pq.enqueue(['dog',2]);
+pq.enqueue(['rabbit',2]);
+pq.enqueue(['human',1]);
+console.log(pq.front());
+console.log(pq.dequeue());
+console.log(pq.dequeue());
+console.log(pq.dequeue());
+console.log(pq.dequeue());
