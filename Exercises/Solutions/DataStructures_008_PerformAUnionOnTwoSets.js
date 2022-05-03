@@ -17,7 +17,7 @@ var Map = function() {
   this.has = function(key) {
     return this.collection.hasOwnProperty(key);
     // I rather do not like return this.collection[key] !== undefined
-    // because if we added .add(key,undefined), then .has() would INCORRETLY return false
+    // because if we added .add(key,undefined), then .has() would INCORRECTLY return false
     // However, with the uncommented line this case is CORRECTLY managed
   };
   

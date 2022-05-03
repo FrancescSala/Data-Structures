@@ -49,13 +49,6 @@ class Set {
       return newSet;
     }
     // Only change code below this line
-/*    intersection(anotherSet) {
-      let s = new Set();
-      for (let v of this.values())
-        if (anotherSet.has(v)) s.add(v);
-      return s;
-    }
-*/
     intersection(anotherSet) {
       let s = new Set();
       // this is to make the fewer iterations possible in the for below
@@ -71,11 +64,3 @@ class Set {
     }
     // Only change code above this line
   }
-
-  let A = new Set();
-  A.add(1);
-  A.add(2);
-  A.add(3);
-  let B = new Set();
-  B.add(2);
-  console.log(A.intersection(B));
