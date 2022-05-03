@@ -101,18 +101,3 @@ class Set {
 
     // Only change code above this line
   }
-
-  let A = new Set();
-  for (let i = 1; i<1000;i++) A.add(i);
-  let B = new Set();
-  for (let i = 1; i<400;i++) B.add(2*i);
-  
-  console.log(B.isSubsetOf(A));
-  console.log(A.isSubsetOf(B));
-  let t1 = Date.now();
-  const numIter = 10000;
-  for (let i =0; i<numIter;i++) B.isSubsetOf(A);
-  for (let i =0; i<numIter;i++) A.isSubsetOf(B);
-  let t2 = Date.now();
-  console.log(t2-t1);   // elapsed time: to check which implementation is more efficient
-
