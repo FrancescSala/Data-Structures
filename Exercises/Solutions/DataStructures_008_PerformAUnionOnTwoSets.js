@@ -1,37 +1,47 @@
-var Map = function() {
-  this.collection = {};
-  // Only change code below this line
-  this.add = function(key,val) {
-    console.log(this.size());
-    this.collection[key] = val;
-  };
-  
-  this.remove = function(key) {
-    delete this.collection[key];
-  };
-  
-  this.get = function(key) {
-    return this.collection[key];
-  };
-  
-  this.has = function(key) {
-    return this.collection.hasOwnProperty(key);
-    // I rather do not like return this.collection[key] !== undefined
-    // because if we added .add(key,undefined), then .has() would INCORRECTLY return false
-    // However, with the uncommented line this case is CORRECTLY managed
-  };
-  
-  this.values = function() {
-    return Object.values(this.collection);  
-  };
-  
-  this.clear = function() {
-    this.collection = {};
-  };
-  
-  this.size = function() {
-    return Object.keys(this.collection).length;
-  };
-  // Only change code above this line
-};
+class Set {
+  constructor() {
+    // This will hold the set
+    this.dictionary = {};
+    this.length = 0;
+  }
+  // This method will check for the presence of an element and return true or false
+  has(element) {
+    return this.dictionary[element] !== undefined;
+  }
+  // This method will return all the values in the set
+  values() {
+    return Object.values(this.dictionary);
+  }
+  // This method will add an element to the set
+  add(element) {
+    if (!this.has(element)) {
+      this.dictionary[element] = element;
+      this.length++;
+      return true;
+    }
 
+    return false;
+  }
+  // This method will remove an element from a set
+  remove(element) {
+    if (this.has(element)) {
+      delete this.dictionary[element];
+      this.length--;
+      return true;
+    }
+
+    return false;
+  }
+  // This method will return the size of the set
+  size() {
+    return this.length;
+  }
+  // Only change code below this line
+  union(anotherSet) {
+    let s = new Set();
+    this.values().forEach(element => s.add(element));
+    anotherSet.values().forEach(element => s.add(element));
+    return s;
+  }
+  // Only change code above this line
+}
