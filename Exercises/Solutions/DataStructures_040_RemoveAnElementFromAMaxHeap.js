@@ -54,26 +54,3 @@ var MaxHeap = function () {
 
     // Only change code above this line
   };
-
-let maxh = new MaxHeap();
-  maxh.insert(6);
-  console.log(maxh.print());
-  maxh.insert(48);
-  console.log(maxh.print());
-  maxh.insert(30);
-  console.log(maxh.print());
-  maxh.insert(2);
-  console.log(maxh.print());
-  maxh.insert(100);
-  console.log(maxh.print());
-  console.log(maxh.remove());
-  console.log(maxh.print());
-  console.log(maxh.remove());
-  console.log(maxh.print());
-  console.log(maxh.remove());
-  console.log(maxh.print());
-  console.log(maxh.remove());
-  console.log(maxh.print());
-  console.log(maxh.remove());
-  console.log(maxh.print());
-

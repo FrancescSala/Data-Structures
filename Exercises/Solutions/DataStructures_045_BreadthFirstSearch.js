@@ -38,7 +38,6 @@ function bfs(graph, root) {
     [0, 1, 0, 1],
     [0, 0, 1, 0]
   ];
-  console.log(bfs(exBFSGraph, 1));
-  console.log(bfs(exBFSGraph, 0));
+  console.log(bfs(exBFSGraph, 3));
 
   
