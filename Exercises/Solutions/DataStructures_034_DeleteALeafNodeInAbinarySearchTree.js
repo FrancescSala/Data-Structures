@@ -12,8 +12,8 @@ function BinarySearchTree() {
   this.remove = function(elem) {
       // will consider only removal of leaf nodes
       if (this.root === null) return null;
-      let n = this.root;
-      let p = null
+      let n = this.root; // n is used to navigate the tree
+      let p = null;  // p is the parent of n
       while (n !== null && n.value !== elem) {
           p = n;
           n = (n.value > elem) ? n.left : n.right;

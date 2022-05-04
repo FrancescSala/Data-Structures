@@ -54,7 +54,7 @@ function BinarySearchTree() {
       o.left = n;
     }
   }; 
-
+  
   this.findMin = function() {
     if (this.root === null) return null;
     let n = this.root;

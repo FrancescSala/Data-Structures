@@ -34,7 +34,9 @@ function LinkedList() {
   
     // Only change code below this line
     this.removeAt = function(index) {
-        if (isNaN(index) || index < 0) return null;
+        if (isNaN(index)) throw Error('Argument index should be a number');
+        if (index < 0) return null;
+        // Or, alternatively, if (isNaN(index) || (index <0)) rerturn false;
         let i = 0;
         let n = head;
         let p = null;

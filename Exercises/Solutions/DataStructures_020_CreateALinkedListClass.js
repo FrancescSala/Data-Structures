@@ -27,3 +27,6 @@ function LinkedList() {
       // Only change code above this line
     };
   }
+
+
+// Note: it could have also been implemented as a ES6 class.

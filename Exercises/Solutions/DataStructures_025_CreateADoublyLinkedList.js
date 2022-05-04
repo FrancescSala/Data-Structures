@@ -39,12 +39,3 @@ var DoublyLinkedList = function() {
   }
   // Only change code above this line
 };
-
-let dll = new DoublyLinkedList();
-console.log(dll.remove('Pamplona'));
-dll.add('Pepe');
-dll.add('Juan');
-dll.add('Guillermo');
-console.log(dll);
-console.log(dll.remove('Guillermo'));
-console.log(dll);

@@ -33,7 +33,9 @@ function LinkedList() {
 
   // Only change code below this line
   this.addAt = function(index,element) {
-    if (isNaN(index) || index < 0) return false;
+    if (isNaN(index)) throw Error('Argument index should be a number');
+    if (index < 0) return false;
+    // Or, alternatively, if (isNaN(index) || (index <0)) rerturn false;
     let i = 0;
     let n = head;
     let p = null;

@@ -57,12 +57,3 @@ function BinarySearchTree() {
   // Only change code above this line
 }
 
-let t = new BinarySearchTree();
-t.add(8);
-t.add(3);
-t.add(1);
-t.add(10);
-t.add(6);
-t.add(13);
-t.add(14);
-displayTree(t);
