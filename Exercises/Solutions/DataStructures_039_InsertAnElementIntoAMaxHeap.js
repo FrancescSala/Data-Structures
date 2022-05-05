@@ -4,18 +4,18 @@ var MaxHeap = function() {
     
     this.insert = (elem) => {
         this.theData.push(elem);
-        let sorted = false;
         let iElem = this.theData.length-1;
-        while (!sorted) {
-            let iParent = Math.floor(iElem/2);
-            if (this.theData[iParent]<elem && iParent !== 0) {
-                [this.theData[iParent],this.theData[iElem]] = [elem,this.theData[iParent]];
-                iElem = iParent;
-            } else sorted = true;
+        let iParent = Math.floor(iElem/2);
+        while (this.theData[iParent] < this.theData[iElem] && iParent !== 0) {
+            [this.theData[iParent],this.theData[iElem]] = [this.theData[iElem],this.theData[iParent]];
+            iElem = iParent;
+            iParent = Math.floor(iElem/2);
         }
     };
+
     
     // make a hard copy of the array. Slicing not to include the initial null at index 0.
     this.print = () => JSON.parse(JSON.stringify(this.theData.slice(1)));
+    this.print2 = () => JSON.parse(JSON.stringify(this.theData)); // including th null at index 0.
     // Only change code above this line
   };

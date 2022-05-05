@@ -18,6 +18,7 @@ var MinHeap = function() {
     // Only change code below this line
     this.heap = [null];
 
+    /*
     this.insert = (elem) => {
         this.heap.push(elem);
         let sorted = false;
@@ -28,6 +29,17 @@ var MinHeap = function() {
                 [this.heap[iParent],this.heap[iElem]] = [elem,this.heap[iParent]];
                 iElem = iParent;
             } else sorted = true;
+        }
+    };
+*/
+    this.insert = (elem) => {
+        this.heap.push(elem);
+        let iElem = this.heap.length-1;
+        let iParent = Math.floor(iElem/2);
+        while (this.heap[iParent] > this.heap[iElem]) {
+            [this.heap[iParent],this.heap[iElem]] = [this.heap[iElem],this.heap[iParent]];
+            iElem = iParent;
+            iParent = Math.floor(iElem/2);
         }
     };
 
@@ -80,6 +92,7 @@ var MinHeap = function() {
 
 let mh = new MinHeap();
 for (let i = 0; i< array.length; i++) mh.insert(array[i]);
+console.log(mh);
 let sortedArray = mh.sort();
 console.log(array);
 console.log(sortedArray);
