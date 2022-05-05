@@ -57,15 +57,12 @@ var MinHeap = function() {
         if (this.heap.length === 2) this.heap = [null];
         else {
             this.heap[1] = this.heap.pop();
-            let sorted = false;
             let i = 1;
-            while (!sorted) {
-                let j = this.min(i);
-                sorted = (i === j);
-                if (!sorted) {
-                    [this.heap[i],this.heap[j]] = [this.heap[j],this.heap[i]];
-                    i = j;
-                }
+            let j = this.min(i);
+            while (i !== j) {
+                [this.heap[i],this.heap[j]] = [this.heap[j],this.heap[i]];
+                i = j;
+                j = this.min(i);
             }
         };
         return v;
