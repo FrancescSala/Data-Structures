@@ -32,6 +32,3 @@ function BinarySearchTree() {
       }
       // Only change code above this line
 }
-
-let t = new BinarySearchTree();
-console.log(t.findMinHeight());
