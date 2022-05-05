@@ -36,7 +36,7 @@ var MinHeap = function() {
         this.min = (index) => {
             let j = 2 * index;
             let m1 = (j < this.heap.length && this.heap[index] > this.heap[j]) ? j : index;
-            let m2 = (++j < this.heap.length && this.heap[index] > this.heap[j]) ? j : index;
+            let m2 = (++j < this.heap.length && this.heap[index] > this.heap[j]) ? j : index; // note the pre-increment ++j to move to the right child
             return (this.heap[m1] < this.heap[m2]) ? m1 : m2;
         };
 

@@ -29,7 +29,7 @@ var MaxHeap = function () {
         this.max = (index) => {
             let j = 2 * index + 1;
             let m1 = (j < this.heap.length && this.heap[index] < this.heap[j]) ? j : index;
-            let m2 = (++j < this.heap.length && this.heap[index] < this.heap[j]) ? j : index;
+            let m2 = (++j < this.heap.length && this.heap[index] < this.heap[j]) ? j : index; // note the pre-increment ++j to move to the right child
             return (this.heap[m1] > this.heap[m2]) ? m1 : m2;
         };
 
